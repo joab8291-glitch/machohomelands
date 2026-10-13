@@ -49,3 +49,17 @@ body{background:#0b162e;color:#f3f6fb}
 .nav.open{background-image:linear-gradient(120deg,rgba(8,20,42,.98),rgba(12,30,55,.97)),url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80');background-size:cover;border-color:rgba(255,255,255,.18)}
 .footer{background-image:linear-gradient(115deg,rgba(6,16,34,.96),rgba(10,27,49,.94)),url('https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1800&q=80');background-size:cover;background-position:center}
 @media(max-width:700px){.section{background-attachment:scroll}.header{height:72px}.nav{position:absolute}.admin-section{background-attachment:scroll}}
+
+
+/* Property photo upload, preview, and mobile-friendly controls */
+.property-photo-field{display:flex;flex-direction:column;gap:10px;min-width:0}
+.property-photo-field>label{display:flex;flex-direction:column;gap:8px}
+.property-photo-field input[type="file"]{width:100%;padding:11px;background:rgba(5,16,34,.72);border:1px dashed rgba(216,231,248,.45);color:#eef5ff;border-radius:3px}
+.property-photo-field input[type="file"]::file-selector-button{border:0;background:var(--cyan);color:#101d3b;font-weight:800;padding:9px 12px;margin-right:12px;cursor:pointer}
+.property-photo-field>small{color:#c3cede;font-size:12px;line-height:1.5}
+.property-photo-preview{position:relative;width:min(100%,520px);min-height:110px;max-height:300px;overflow:hidden;border:1px solid rgba(255,255,255,.25);background:rgba(5,16,34,.75)}
+.property-photo-preview img{display:block;width:100%;max-height:300px;min-height:110px;object-fit:contain}
+.property-photo-preview span{position:absolute;left:9px;bottom:9px;padding:5px 8px;background:rgba(5,16,34,.86);color:#fff;font-size:11px;font-weight:800}
+.listing-card>img{display:block;background:#12233f}
+.brand-logo-image{display:block;width:auto;max-width:150px;height:auto;max-height:54px;object-fit:contain}
+@media(max-width:700px){.property-photo-preview,.property-photo-preview img{max-height:220px}.property-photo-field input[type="file"]::file-selector-button{padding:8px;margin-right:7px}}
