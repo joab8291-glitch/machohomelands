@@ -90,3 +90,25 @@ body{background:#0b162e;color:#f3f6fb}
 .portfolio-save-head{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.17)}
 .portfolio-card .listing-info .portfolio-management{color:#dce8f5}
 @media(max-width:700px){.portfolio-promo .section-head{display:block}.portfolio-promo .section-head>div:last-child{margin-top:14px}.portfolio-empty{padding:34px 18px}}
+
+/* Homepage motion: restrained, accessible, and transform/opacity-only for smooth rendering. */
+@keyframes mh-hero-enter{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes mh-hero-image{from{transform:scale(1.045)}to{transform:scale(1)}}
+@keyframes mh-card-enter{from{opacity:0;transform:translate3d(0,12px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+.hero-bg{transform:scale(1);animation:mh-hero-image 1.6s cubic-bezier(.2,.7,.25,1) both;will-change:transform}
+.hero-content>.eyebrow,.hero-content>h1,.hero-content>p:not(.hero-note),.hero-content>.hero-actions,.hero-content>.hero-note{opacity:0;animation:mh-hero-enter .68s cubic-bezier(.2,.7,.25,1) both}
+.hero-content>.eyebrow{animation-delay:.12s}
+.hero-content>h1{animation-delay:.24s}
+.hero-content>p:not(.hero-note){animation-delay:.36s}
+.hero-content>.hero-actions{animation-delay:.48s}
+.hero-content>.hero-note{animation-delay:.6s}
+.home-reveal{opacity:0;transform:translate3d(0,16px,0);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.25,1)}
+.home-reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.home-reveal.is-visible .service-card{animation:mh-card-enter .55s cubic-bezier(.2,.7,.25,1) both}
+.home-reveal.is-visible .service-card:nth-child(2){animation-delay:.08s}
+.home-reveal.is-visible .service-card:nth-child(3){animation-delay:.16s}
+.home-reveal.is-visible .service-card:nth-child(4){animation-delay:.24s}
+.home-reveal.is-visible .trust-grid>div:nth-child(2){animation:mh-card-enter .5s .08s both}
+.home-reveal.is-visible .trust-grid>div:nth-child(3){animation:mh-card-enter .5s .16s both}
+@media(max-width:700px){.hero-bg{animation-duration:1.2s}.home-reveal{transform:translate3d(0,10px,0);transition-duration:.48s}}
+@media(prefers-reduced-motion:reduce){.hero-bg,.hero-content>.eyebrow,.hero-content>h1,.hero-content>p:not(.hero-note),.hero-content>.hero-actions,.hero-content>.hero-note,.home-reveal.is-visible .service-card,.home-reveal.is-visible .trust-grid>div:nth-child(2),.home-reveal.is-visible .trust-grid>div:nth-child(3){animation:none!important;opacity:1!important;transform:none!important}.home-reveal{opacity:1!important;transform:none!important;transition:none!important}}
