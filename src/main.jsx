@@ -37,7 +37,7 @@ function AdminPanel({onBack,onLogoUpdated}){
 }
 
 function App(){
- const [page,setPage]=useState(()=>{const path=location.pathname.replace(/^\\/+|\\/+$/g,'');return ['home','about','services','properties','portfolio','contact','admin'].includes(path)?path:location.hash.slice(1)||'home';}),[menu,setMenu]=useState(false),[filter,setFilter]=useState('All'),[listingData,setListingData]=useState(listings),[portfolioData,setPortfolioData]=useState([]),[logoUrl,setLogoUrl]=useState('');
+ const [page,setPage]=useState(()=>{const path=location.pathname.replace(/^\/+|\/+$/g,'');return ['home','about','services','properties','portfolio','contact','admin'].includes(path)?path:location.hash.slice(1)||'home';}),[menu,setMenu]=useState(false),[filter,setFilter]=useState('All'),[listingData,setListingData]=useState(listings),[portfolioData,setPortfolioData]=useState([]),[logoUrl,setLogoUrl]=useState('');
  useEffect(()=>{fetch('/data/listings.json').then(r=>r.ok?r.json():null).then(d=>{if(Array.isArray(d))setListingData(d);}).catch(()=>{});fetch('/data/portfolio.json').then(r=>r.ok?r.json():null).then(d=>{if(Array.isArray(d))setPortfolioData(d);}).catch(()=>{});fetch('/data/site.json').then(r=>r.ok?r.json():{}).then(d=>setLogoUrl(d.logoUrl||'')).catch(()=>{});},[]);
  const go=p=>{setPage(p);setMenu(false);history.replaceState(null,'',p==='home'?'/':'/'+p);window.scrollTo({top:0,behavior:'smooth'});};
  const intro=(kicker,title,desc)=><section className="page-intro"><div className="wrap"><p className="eyebrow">{kicker}</p><h1>{title}</h1><p>{desc}</p></div></section>;
