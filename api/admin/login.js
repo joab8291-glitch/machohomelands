@@ -1,0 +1,3 @@
+import {timingSafeEqual} from 'node:crypto';import {setSession} from '../_auth.js';
+const same=(a,b)=>{a=Buffer.from(String(a||''));b=Buffer.from(String(b||''));return a.length===b.length&&timingSafeEqual(a,b);};
+export default function handler(req,res){if(req.method!=='POST'){res.setHeader('Allow','POST');return res.status(405).json({error:'Method not allowed'});}const u=process.env.ADMIN_USERNAME,p=process.env.ADMIN_PASSWORD;if(!u||!p||!process.env.ADMIN_SESSION_SECRET)return res.status(503).json({error:'Configure admin environment variables in Vercel first.'});const b=req.body||{};if(!same(b.username,u)||!same(b.password,p))return res.status(401).json({error:'Incorrect username or password.'});setSession(res);return res.status(200).json({ok:true});}
