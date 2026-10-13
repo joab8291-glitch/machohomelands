@@ -1,0 +1,5 @@
+[
+ {"id":"mh-001","title":"Residential Rental Homes","type":"Residential","status":"Vacant","location":"Kihunguro & surrounding areas","price":"Contact for rent","bedrooms":"","description":"Ask our team about currently available homes and viewing arrangements.","image":"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80"},
+ {"id":"mh-002","title":"Commercial Stalls & Spaces","type":"Commercial","status":"Vacant","location":"Ruiru and nearby business areas","price":"Contact for rent","bedrooms":"","description":"Enquire about available commercial stalls and business spaces.","image":"https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1000&q=80"},
+ {"id":"mh-003","title":"Property Management","type":"Management","status":"Vacant","location":"Kiambu County, Kenya","price":"Contact us","bedrooms":"","description":"Ask about property management support and services.","image":"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80"}
+]
