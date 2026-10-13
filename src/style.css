@@ -74,3 +74,19 @@ body{background:#0b162e;color:#f3f6fb}
 .portfolio-toggle{display:flex!important;flex-direction:row!important;align-items:center;gap:10px;color:#edf3fb}.portfolio-toggle input{width:18px!important;height:18px;margin:0!important;accent-color:var(--cyan)}
 .portfolio-save-head{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
 @media(max-width:700px){.portfolio-promo .section-head>div:last-child{margin-top:16px}.portfolio-toggle{align-items:flex-start}}
+
+/* Managed property portfolio */
+.portfolio-empty{max-width:680px;margin:12px auto;text-align:center;padding:46px 24px;border:1px solid rgba(255,255,255,.2);background:rgba(9,25,47,.72);color:#fff}
+.portfolio-empty>svg{color:var(--cyan);margin-bottom:12px}
+.portfolio-empty h2{margin-bottom:12px}
+.portfolio-empty p{color:#d0dbea;font-size:13px;line-height:1.8;margin:0 auto 22px;max-width:510px}
+.portfolio-promo{background-image:linear-gradient(120deg,rgba(8,20,42,.95),rgba(12,32,57,.9)),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=80');background-size:cover;background-position:center}
+.portfolio-promo .section-head{align-items:center;margin-bottom:0}
+.portfolio-promo .section-head>div:last-child{max-width:440px}
+.portfolio-promo .section-head>div:last-child>p{color:#d0dbea;font-size:13px;line-height:1.8}
+.portfolio-admin{border-color:rgba(32,196,211,.38)}
+.portfolio-toggle{display:flex!important;align-items:center;gap:10px}
+.portfolio-toggle input{display:inline-block!important;width:18px!important;height:18px;margin:0!important;accent-color:var(--cyan)}
+.portfolio-save-head{margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.17)}
+.portfolio-card .listing-info .portfolio-management{color:#dce8f5}
+@media(max-width:700px){.portfolio-promo .section-head{display:block}.portfolio-promo .section-head>div:last-child{margin-top:14px}.portfolio-empty{padding:34px 18px}}
